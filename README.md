@@ -2,21 +2,21 @@
 
 
 ## Bash alias
-
 You can create a bash alias like this:
 ```
 function wp() {
+    DOCKER_NETWORK_NAME="docker_default"
+    WORDPRESS_DIR=$(pwd)
     docker run -it --rm \
-        -v $(pwd):/mnt \
-        --net=lamp-network \
-        mbodenhamer/alpine-wpcli wp --path=/mnt ${@:1}
+        -v $WORDPRESS_DIR:/mnt \
+        --net=$DOCKER_NETWORK_NAME \
+        soifou/wpcli-alpine wp --path=/mnt ${@:1}
 }
 ```
 Assuming docker network is `lamp-network`.
 See your available networks with `docker network ls`
 
 ## Database operations
-
 If you want import/export database, you can do something like this:
 ```
 $ cd /path/to/wordpress/project
