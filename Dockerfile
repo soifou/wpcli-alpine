@@ -3,7 +3,6 @@ MAINTAINER François Fleur <fleur.fr@gmail.com>
 
 RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/testing" \
     curl \
-    git \
     less \
     mysql-client \
     php7 \
@@ -16,8 +15,7 @@ RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/t
     php7-openssl \
     php7-pdo \
     php7-pdo_mysql \
-    php7-phar \
-    zip
+    php7-phar
 
 RUN ln -s /etc/php7 /etc/php && \
     ln -s /usr/bin/php7 /usr/bin/php && \
@@ -27,7 +25,5 @@ COPY rootfs/ /
 
 RUN mkdir /usr/local/share/php && cd /usr/local/share/php && \
     curl -sSfLJO https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
-    php wp-cli.phar --allow-root cli version && \
     chmod +x wp-cli.phar && \
-    ln -s /usr/local/share/php/wp-cli.phar /usr/local/bin/wp && \
-    wp --allow-root cli version
+    ln -s /usr/local/share/php/wp-cli.phar /usr/local/bin/wp
