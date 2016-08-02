@@ -15,7 +15,8 @@ RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/t
     php7-openssl \
     php7-pdo \
     php7-pdo_mysql \
-    php7-phar
+    php7-phar \
+    php7-posix
 
 RUN ln -s /etc/php7 /etc/php && \
     ln -s /usr/bin/php7 /usr/bin/php && \
@@ -27,3 +28,5 @@ RUN mkdir /usr/local/share/php && cd /usr/local/share/php && \
     curl -sSfLJO https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
     ln -s /usr/local/share/php/wp-cli.phar /usr/local/bin/wp
+
+ENTRYPOINT ["wp", "--path=/mnt"]

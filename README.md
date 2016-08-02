@@ -10,7 +10,7 @@ function wp() {
     docker run -it --rm \
         -v $WORDPRESS_DIR:/mnt \
         --net=$DOCKER_NETWORK_NAME \
-        soifou/wpcli-alpine wp --path=/mnt ${@:1}
+        soifou/wpcli-alpine ${@:1}
 }
 ```
 Assuming docker network is `lamp-network`.
