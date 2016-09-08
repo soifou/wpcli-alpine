@@ -30,4 +30,4 @@ RUN mkdir /usr/local/share/php && cd /usr/local/share/php && \
     chmod +x wp-cli.phar && \
     ln -s /usr/local/share/php/wp-cli.phar /usr/local/bin/wp
 
-ENTRYPOINT ["wp", "--path=/mnt"]
+ENTRYPOINT ["wp", "--allow-root", "--path=/mnt"]
