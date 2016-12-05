@@ -1,33 +1,27 @@
-FROM alpine:edge
+FROM soifou/composer:latest
+
 MAINTAINER François Fleur <fleur.fr@gmail.com>
+
+ARG BUILD_DATE
+ARG VCS_REF
+LABEL org.label-schema.build-date=$BUILD_DATE \
+    org.label-schema.name="WP-CLI baked with Composer on top of Alpine Linux" \
+    org.label-schema.vcs-ref=$VCS_REF \
+    org.label-schema.docker.dockerfile="/Dockerfile" \
+    org.label-schema.vcs-url="https://github.com/soifou/wpcli-alpine"
+
+ENV WP_CLI_VERSION 1.0.0
 
 RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/testing" \
     curl \
     less \
-    mysql-client \
-    php7 \
-    php7-curl \
-    php7-dom \
-    php7-iconv \
-    php7-json \
-    php7-mbstring \
     php7-mysqli \
-    php7-openssl \
-    php7-pdo \
-    php7-pdo_mysql \
-    php7-phar \
-    php7-posix \
-    php7-zlib
+    mariadb-client
 
-RUN ln -s /etc/php7 /etc/php && \
-    ln -s /usr/bin/php7 /usr/bin/php && \
-    ln -s /usr/lib/php7 /usr/lib/php
+RUN rm -rf /tmp/src && \
+    rm -rf /var/cache/apk/*
 
-COPY rootfs/ /
+RUN composer create-project wp-cli/wp-cli:$WP_CLI_VERSION /usr/share/wp-cli --no-dev
+RUN ln -s /usr/share/wp-cli/bin/wp /usr/bin/wp
 
-RUN mkdir /usr/local/share/php && cd /usr/local/share/php && \
-    curl -sSfLJO https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
-    chmod +x wp-cli.phar && \
-    ln -s /usr/local/share/php/wp-cli.phar /usr/local/bin/wp
-
-ENTRYPOINT ["wp", "--allow-root", "--path=/mnt"]
+ENTRYPOINT ["/usr/bin/wp", "--allow-root", "--path=/mnt"]

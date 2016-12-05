@@ -1,23 +1,34 @@
 # WP-CLI on Alpine Linux
 
+WP-CLI baked from Composer build on top of Alpine Linux.
+
+## Alias
+- `1.0.0`, `latest` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/latest/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.0.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+- `0.25.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/0.25.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:0.25.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
 
 ## Bash alias
-You can create a bash alias like this:
+You can create a bash alias ie:
 ```
 function wp() {
-    DOCKER_NETWORK_NAME="docker_default"
-    WORDPRESS_DIR=$(pwd)
     docker run -it --rm \
-        -v $WORDPRESS_DIR:/mnt \
-        --net=$DOCKER_NETWORK_NAME \
-        soifou/wpcli-alpine ${@:1}
+        -v $(pwd):/mnt \
+        soifou/wpcli-alpine:latest ${@:1}
 }
 ```
-Assuming docker network is `lamp-network`.
-See your available networks with `docker network ls`
+
+## Create a wordpress project
+```
+$ mkdir wp-test && cd wp-test
+$ wp core download
+$ wp core config --dbhost=db --dbname=wptest --dbuser=root --dbpass=root
+$ wp core install \
+    --url=http://wp-test \
+    --title="Awesome website" \
+    --admin_user=admin --admin_password=admin --admin_email admin@admin.com
+```
 
 ## Database operations
-If you want import/export database, you can do something like this:
+Import/export database:
 ```
 $ cd /path/to/wordpress/project
 $ wp db import /mnt/dump.sql
