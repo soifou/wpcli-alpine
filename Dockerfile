@@ -16,6 +16,7 @@ RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/t
     curl \
     less \
     php7-mysqli \
+    php7-gd \
     mariadb-client
 
 RUN rm -rf /tmp/src && \
