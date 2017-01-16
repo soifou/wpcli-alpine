@@ -13,11 +13,12 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 ENV WP_CLI_VERSION 0.25.0
 
 RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/testing" \
+    bash \
     curl \
     less \
-    php7-mysqli \
+    mariadb-client \
     php7-gd \
-    mariadb-client
+    php7-mysqli
 
 RUN rm -rf /tmp/src && \
     rm -rf /var/cache/apk/*
