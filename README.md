@@ -3,7 +3,8 @@
 WP-CLI baked from Composer build on top of Alpine Linux.
 
 ## Alias
-- `1.0.0`, `latest` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/latest/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.0.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+- `1.1.0`, `latest` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/latest/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.1.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+- `1.0.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/1.0.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.0.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
 - `0.25.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/0.25.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:0.25.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
 
 ## Bash alias
