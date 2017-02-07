@@ -16,9 +16,11 @@ RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/t
     bash \
     curl \
     less \
+    freetype-dev libjpeg-turbo-dev libpng-dev \
     mariadb-client \
     php7-gd \
-    php7-mysqli
+    php7-mysqli \
+    php7-mongodb
 
 RUN rm -rf /tmp/src && \
     rm -rf /var/cache/apk/*
