@@ -10,7 +10,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.docker.dockerfile="/Dockerfile" \
     org.label-schema.vcs-url="https://github.com/soifou/wpcli-alpine"
 
-ENV WP_CLI_VERSION 1.0.0
+ENV WP_CLI_VERSION 1.1.0
 
 RUN apk add --no-cache --repository "http://dl-cdn.alpinelinux.org/alpine/edge/testing" \
     bash \
