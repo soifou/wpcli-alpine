@@ -3,7 +3,7 @@
 [WP-CLI](http://wp-cli.org/) baked from [PHP Composer](https://getcomposer.org/) build on top of [Alpine Linux](https://alpinelinux.org/).
 
 ## Alias
-- `1.3.0`, `latest` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/latest/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.3.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+- `1.3.0`, `latest` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/master/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.3.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
 - `1.1.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/1.1.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.1.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
 - `1.0.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/1.0.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.0.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
 - `0.25.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/0.25.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:0.25.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
