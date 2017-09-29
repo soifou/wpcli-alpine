@@ -22,6 +22,7 @@ RUN echo "http://php.codecasts.rocks/v3.6/php-7.1" >> /etc/apk/repositories && \
     freetype-dev libjpeg-turbo-dev libpng-dev \
     mariadb-client \
     php7 \
+    php7-ftp \
     php7-gd \
     php7-openssl \
     php7-phar \
