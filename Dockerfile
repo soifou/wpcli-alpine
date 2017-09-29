@@ -33,7 +33,7 @@ RUN echo "http://php.codecasts.rocks/v3.6/php-7.1" >> /etc/apk/repositories && \
     php7-zlib
 
 ADD ./composer.sh /composer.sh
-RUN chmod u+x /composer.sh && \
+RUN chmod u+x /composer.sh; sync && \
     /composer.sh
 
 RUN rm -rf /tmp/src && \
