@@ -10,7 +10,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.docker.dockerfile="/Dockerfile" \
     org.label-schema.vcs-url="https://github.com/soifou/wpcli-alpine"
 
-ENV WP_CLI_VERSION 1.3.0
+ENV WP_CLI_VERSION 1.4.0
 
 ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 
