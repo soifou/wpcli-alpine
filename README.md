@@ -2,24 +2,30 @@
 
 [WP-CLI](http://wp-cli.org/) baked from [PHP Composer](https://getcomposer.org/) build on top of [Alpine Linux](https://alpinelinux.org/).
 
-## Alias
-- `1.4.0`, `latest` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/master/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.4.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
-- `1.3.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/1.3.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.3.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
-- `1.1.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/1.1.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.1.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
-- `1.0.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/1.0.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.0.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
-- `0.25.0` [(*Dockerfile*)](https://github.com/soifou/wpcli-alpine/blob/0.25.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:0.25.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+## Available Docker tags
+
+-   `latest` [(_Dockerfile_)](https://github.com/soifou/wpcli-alpine/blob/master/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.5.1.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+-   `1.4.0`, `latest` [(_Dockerfile_)](https://github.com/soifou/wpcli-alpine/blob/1.4.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.4.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+-   `1.3.0` [(_Dockerfile_)](https://github.com/soifou/wpcli-alpine/blob/1.3.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.3.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+-   `1.1.0` [(_Dockerfile_)](https://github.com/soifou/wpcli-alpine/blob/1.1.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.1.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+-   `1.0.0` [(_Dockerfile_)](https://github.com/soifou/wpcli-alpine/blob/1.0.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:1.0.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
+-   `0.25.0` [(_Dockerfile_)](https://github.com/soifou/wpcli-alpine/blob/0.25.0/Dockerfile) [![](https://images.microbadger.com/badges/image/soifou/wpcli-alpine:0.25.0.svg)](http://microbadger.com/images/soifou/wpcli-alpine "Get your own image badge on microbadger.com")
 
 ## Bash alias
+
 Minimal:
-```
+
+```sh
 wp() {
     docker run -it --rm \
         -v $(pwd):/mnt \
         soifou/wpcli-alpine:latest ${@:1}
 }
 ```
+
 Bells and whistles:
-```
+
+```sh
 wp() {
     tty=
     tty -s && tty=--tty
@@ -35,7 +41,8 @@ wp() {
 ```
 
 ## Create a wordpress project
-```
+
+```sh
 $ mkdir wp-test && cd wp-test
 $ wp core download
 $ wp core config --dbhost=db --dbname=wptest --dbuser=root --dbpass=root
@@ -49,7 +56,7 @@ $ wp core install \
 
 Since the `--path` point inside the container, your dump must be available inside.
 
-```
+```sh
 $ cd /path/to/wordpress/project
 $ wp db dump /mnt/dump.sql
 $ wp db import /mnt/dump.sql
