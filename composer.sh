@@ -11,7 +11,7 @@ then
     exit 1
 fi
 
-php composer-setup.php --no-ansi --install-dir=/usr/bin --filename=composer --quiet
+php composer-setup.php --no-ansi --install-dir=/usr/bin --filename=composer --quiet --version=1.10.19
 RESULT=$?
 rm composer-setup.php
 exit $RESULT
